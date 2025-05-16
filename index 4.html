@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Приглашение на дачу</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #fffef9, #ffe4e1);
+      padding: 30px;
+      color: #2c2c2c;
+    }
+
+    .card {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      border: 4px dashed #ffb347;
+      border-radius: 20px;
+      background: #ffffffee;
+      box-shadow: 0 0 25px rgba(255, 180, 80, 0.3);
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      color: #c97b00;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #d2691e;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+
+    .signature {
+      margin-top: 2rem;
+      text-align: right;
+      font-style: italic;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const nameParam = params.get('name');
+      if (nameParam) {
+        const decodedName = decodeURIComponent(nameParam).replace(/_/g, ' ');
+        document.getElementById('name').textContent = decodedName;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="card">
+    <h1 id="name">Уважаемый(ая)</h1>
+    <h2>Вы приглашены на неформальную встречу выпускников 🌿</h2>
+    <p>
+      25 мая 2025 года мы собираемся вместе — на даче, чтобы спокойно, тепло и по-доброму отметить наш выпуск.
+      Без пафоса, но с искренностью. Мы хотим ещё раз увидеть вас, поговорить, посмеяться, вспомнить, поблагодарить.
+    </p>
+    <p>
+      Адрес мы пришлём вам лично ❤️<br>
+      Главное — знайте: вы для нас по-настоящему важны.
+    </p>
+    <p class="signature">
+      До встречи,<br>
+      ваши выпускники 2025 года
+    </p>
+  </div>
+</body>
+</html>
